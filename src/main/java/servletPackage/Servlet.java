@@ -28,9 +28,9 @@ public class Servlet extends HttpServlet {
 	 */
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("userName");
-		String password = request.getParameter("passWord");
-		request.setAttribute("userName",username); 
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		request.setAttribute("username",username); 
 		request.setAttribute("password", password);
 
 		if(request.getParameter("indexButton")!=null) {
