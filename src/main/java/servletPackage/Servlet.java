@@ -20,7 +20,7 @@ public class Servlet extends HttpServlet {
 	 */
 	public Servlet() {
 		super();
-		myData = new Shows();
+		myData = new Shows ("allData","./servletPackage/netflixAllWeeksGlobalProcessed.txt");
 	}
 
 	/**
