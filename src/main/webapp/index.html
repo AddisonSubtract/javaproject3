@@ -5,11 +5,46 @@
 <meta charset="ISO-8859-1">
 <title>Java Project 3</title>
 </head>
+
+<style>
+h1.solid {
+	border-style: solid;
+	border-color: red;
+}
+
+h1 {
+	background-color: black;
+	color: red;
+	text-align: center;
+}
+
+body {
+	background-color: darkgray;
+}
+
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 20px;
+}
+
+</style>
+
 <body>
+
+		<h1 class="solid">Netflix Login</h1>
+
 	<form action=http://localhost:8081/javaproject3/Servlet method="get">
-		Enter your username: <input type="text" name="username" value=""> <br>
-		Enter your password: <input type="password" name="password" value=> <br>
+	
+	<div>
+		Enter your username: <input type="text" name="username" value=""> <br> 
+		Enter your password: <input type="password" name="password" value=> <br> 
 		<input type="submit" value="Go!" name="indexButton">
+	</div>	
+	
 	</form>
+
 </body>
 </html>
