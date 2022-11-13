@@ -137,7 +137,7 @@ public class Shows {
 		for (ShowWeek s : showWeeks) {
 			if(purgeCheck(s.getShowTitle())== true)
 				continue;
-			toReturn += s.toString();
+			toReturn += "<option value=\"" + s.toString() + "\">" +s.toString()+ "</option>";
 			count++;
 			if(count >= 10)
 			{

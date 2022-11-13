@@ -1,6 +1,7 @@
 package servletPackage;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import servletPackage.Shows;
+import servletPackage.ShowWeek;
 /*
  * Servlet implementation class Servlet
  */
@@ -15,14 +19,20 @@ import javax.servlet.http.HttpServletResponse;
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Shows myData;
+	private String allshows;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public Servlet() {
 		super();
 		myData = new Shows ("allData","./servletPackage/netflixAllWeeksGlobalProcessed.txt");
-	}
+		
+		allshows = "<select name=\"genres\">";
+		allshows+= myData.toString();
+		allshows += "</select>";
 
+	}
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -35,6 +45,7 @@ public class Servlet extends HttpServlet {
 
 		if(request.getParameter("indexButton")!=null) {
 			if(username.equals("md") && password.equals("pw")) {
+				request.setAttribute("DropdownData", allshows);
 				RequestDispatcher rd =request.getRequestDispatcher("/mainShows.jsp");
 				rd.forward(request,response);
 			} else {

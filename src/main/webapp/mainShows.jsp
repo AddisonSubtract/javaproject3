@@ -8,8 +8,9 @@
 </head>
 <body>
 	<%
-		String name = (String) request.getAttribute("username");
+		String movieData = (String) request.getAttribute("DropdownData");
 	%>
-	<%=name%>
+	
+	<%=movieData%>
 </body>
 </html>
