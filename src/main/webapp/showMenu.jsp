@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Display Shows</title>
+<title>Menu Page</title>
+</head>
 
 <style>
 body {
@@ -15,7 +16,7 @@ body {
 	width: 100%;
 	border: none;
 	background-color: #E50914;
-	padding: 14px 20px;
+	padding: 14px 28px;
 	font-size: 16px;
 	cursor: pointer;
 	text-align: center;
@@ -27,17 +28,12 @@ body {
 }
 </style>
 
-</head>
 <body>
 	<form>
-		<%
-		String movieData = (String) request.getAttribute("DropdownData");
-		%>
-
-		<%=movieData%>
-
-		<input type="submit" class="block" value="Return" name="returnShowButton">
-		<br>
+		<input type="submit" class="block" value="View Shows!" name="display">
+		<input type="submit" class="block" value="Add New Show" name="add">
+		<input type="submit" class="block" value="Logout" name="logout">
 	</form>
+
 </body>
 </html>

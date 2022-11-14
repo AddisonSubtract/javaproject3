@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Display Shows</title>
-
+<title>Add Shows</title>
 <style>
 body {
 	background-color: darkgray;
@@ -26,18 +25,13 @@ body {
 	color: black;
 }
 </style>
-
 </head>
 <body>
+
 	<form>
-		<%
-		String movieData = (String) request.getAttribute("DropdownData");
-		%>
-
-		<%=movieData%>
-
-		<input type="submit" class="block" value="Return" name="returnShowButton">
-		<br>
+		Add a Show: <input type="text" name="addShow" size="50"> <br>
+		<input type="submit" class="block" value="Submit" name="addShowButton"> <br>
 	</form>
+	
 </body>
 </html>
