@@ -12,5 +12,8 @@
 	%>
 	
 	<%=movieData%>
+	
+	Add a Show: <input type="text" name="addShow" value=""> <br>
+	<input type="submit" value="Submit" name="showButton"> <br>
 </body>
 </html>

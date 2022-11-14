@@ -40,8 +40,10 @@ public class Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String showAdd = request.getParameter("addShow");
 		request.setAttribute("username",username); 
 		request.setAttribute("password", password);
+		request.setAttribute("addShow", showAdd);
 
 		if(request.getParameter("indexButton")!=null) {
 			if(username.equals("md") && password.equals("pw")) {
@@ -52,6 +54,17 @@ public class Servlet extends HttpServlet {
 				RequestDispatcher rd =request.getRequestDispatcher("/index.html");
 				rd.forward(request,response);
 			}
+		}
+		
+		if(request.getParameter("showButton") != null) {
+			allshows = "<select name=\"genres\">";
+			allshows+= myData.toString();
+			allshows+=  "<option value=\"" + showAdd + "\">" + showAdd + "</option>";
+			allshows += "</select>";
+			
+			request.setAttribute("DropdownData", allshows);
+            RequestDispatcher rd=request.getRequestDispatcher("/index.html");
+            rd.forward(request,response);
 		}
 
 	}
